@@ -1,4 +1,5 @@
-import instruments.Guitar;
+package instruments;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ public class GuitarTest {
 
     @Before
     public void before() {
-        guitar = new Guitar("Guitar","String", "Rosewood", "Red", 6);
+        guitar = new Guitar("Guitar","String", "Rosewood", "Red", 6, 589.00, 699.99);
     }
 
     @Test
@@ -41,6 +42,21 @@ public class GuitarTest {
     @Test
     public void canPlayInstrument() {
         assertEquals("Brrrmmmmm! I'm a Guitar!", guitar.play(guitar));
+    }
+
+    @Test
+    public void canGetCostPrice() {
+        assertEquals(589.00, guitar.getCostPrice(), 0.01);
+    }
+
+    @Test
+    public void canGetSalePrice() {
+        assertEquals(699.99, guitar.getSalePrice(), 0.01);
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(110.99, guitar.calculateMarkup(), 0.01);
     }
 
 }

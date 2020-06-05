@@ -2,12 +2,12 @@ package instruments;
 
 import interfaces.IPlay;
 
-public class Piano extends Instrument implements IPlay {
+public class Piano extends Instrument implements IPlay{
 
     private String size;
 
-    public Piano(String name, String type, String material, String colour, String size) {
-        super(name, type, material, colour);
+    public Piano(String name, String type, String material, String colour, String size, double costPrice, double salePrice) {
+        super(name, type, material, colour, costPrice, salePrice);
         this.size = size;
     }
 

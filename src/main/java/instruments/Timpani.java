@@ -6,8 +6,8 @@ public class Timpani extends Instrument implements IPlay {
 
     String clutch;
 
-    public Timpani(String name, String type, String material, String colour, String clutch) {
-        super(name, type, material, colour);
+    public Timpani(String name, String type, String material, String colour, String clutch, double costPrice, double salePrice) {
+        super(name, type, material, colour, costPrice, salePrice);
         this.clutch = clutch;
     }
 

@@ -1,4 +1,5 @@
-import instruments.Piano;
+package instruments;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ public class PianoTest {
 
     @Before
     public void before() {
-        piano = new Piano("Piano", "String", "Mahogany", "Black", "Concert Grand");
+        piano = new Piano("Piano", "String", "Mahogany", "Black", "Concert Grand", 125000.00, 172000.00);
     }
 
     @Test
@@ -41,6 +42,21 @@ public class PianoTest {
     @Test
     public void canPlayInstrument() {
         assertEquals("Plink! Plonk! I'm a Piano!", piano.play(piano));
+    }
+
+    @Test
+    public void canGetCostPrice() {
+        assertEquals(125000.00, piano.getCostPrice(), 0.01);
+    }
+
+    @Test
+    public void canGetSalePrice() {
+        assertEquals(172000.00, piano.getSalePrice(), 0.01);
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(47000.00, piano.calculateMarkup(), 0.01);
     }
 
 }

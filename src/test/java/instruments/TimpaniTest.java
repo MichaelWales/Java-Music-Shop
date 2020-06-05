@@ -1,4 +1,5 @@
-import instruments.Timpani;
+package instruments;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ public class TimpaniTest {
 
     @Before
     public void before() {
-        timpani = new Timpani("Timpani", "Percussion", "Copper", "Bronze", "Friction");
+        timpani = new Timpani("Timpani", "Percussion", "Copper", "Bronze", "Friction", 2400.00, 3100.00);
     }
 
     @Test
@@ -41,6 +42,21 @@ public class TimpaniTest {
     @Test
     public void canPlayInstrument() {
         assertEquals("BOOM! BOOM! BOOM! I'm a Timpani!", timpani.play(timpani));
+    }
+
+    @Test
+    public void canGetCostPrice() {
+        assertEquals(2400.00, timpani.getCostPrice(), 0.01);
+    }
+
+    @Test
+    public void canGetSalePrice() {
+        assertEquals(3100.00, timpani.getSalePrice(), 0.01);
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(700.00, timpani.calculateMarkup(), 0.01);
     }
 
 }
