@@ -10,7 +10,12 @@ public class TimpaniTest {
 
     @Before
     public void before() {
-        timpani = new Timpani("Percussion", "Copper", "Bronze", "Friction");
+        timpani = new Timpani("Timpani", "Percussion", "Copper", "Bronze", "Friction");
+    }
+
+    @Test
+    public void canGetName() {
+        assertEquals("Timpani", timpani.getName());
     }
 
     @Test
@@ -31,6 +36,11 @@ public class TimpaniTest {
     @Test
     public void canGetClutchType() {
         assertEquals("Friction", timpani.getClutchType());
+    }
+
+    @Test
+    public void canPlayInstrument() {
+        assertEquals("BOOM! BOOM! BOOM! I'm a Timpani!", timpani.play(timpani));
     }
 
 }

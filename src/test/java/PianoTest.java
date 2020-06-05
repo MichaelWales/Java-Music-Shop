@@ -10,7 +10,12 @@ public class PianoTest {
 
     @Before
     public void before() {
-        piano = new Piano("String", "Mahogany", "Black", "Concert Grand");
+        piano = new Piano("Piano", "String", "Mahogany", "Black", "Concert Grand");
+    }
+
+    @Test
+    public void canGetName() {
+        assertEquals("Piano", piano.getName());
     }
 
     @Test
@@ -31,6 +36,11 @@ public class PianoTest {
     @Test
     public void canGetSize() {
         assertEquals("Concert Grand", piano.getSize());
+    }
+
+    @Test
+    public void canPlayInstrument() {
+        assertEquals("Plink! Plonk! I'm a Piano!", piano.play(piano));
     }
 
 }

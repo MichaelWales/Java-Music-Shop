@@ -10,7 +10,12 @@ public class FluteTest {
 
     @Before
     public void before() {
-        flute = new Flute("Woodwind", "Gold", "Gold", 24);
+        flute = new Flute("Flute", "Woodwind", "Gold", "Gold", 24);
+    }
+
+    @Test
+    public void canGetName() {
+        assertEquals("Flute", flute.getName());
     }
 
     @Test
@@ -32,4 +37,10 @@ public class FluteTest {
     public void canGetNumberOfKeys() {
         assertEquals(24, flute.getNumberOfKeys());
     }
+
+    @Test
+    public void canPlayInstrument() {
+        assertEquals("Tu-re-lu-re-lu! I'm a Flute!", flute.play(flute));
+    }
+
 }
