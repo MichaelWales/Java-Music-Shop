@@ -1,5 +1,4 @@
 import accessories.Accessory;
-import accessories.CleaningEquipment;
 import instruments.Instrument;
 import interfaces.ISell;
 
